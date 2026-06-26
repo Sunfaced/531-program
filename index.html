@@ -2,29 +2,30 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
+    <!-- ✅ Добавьте этот тег для правильных относительных путей -->
+    <base href="/531-program/" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
     <meta name="theme-color" content="#f97316" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- ✅ Добавлено -->
     <meta
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
     <meta name="apple-mobile-web-app-title" content="5/3/1" />
 
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="apple-touch-icon" href="/icon-152x152.png" />
+    <link rel="manifest" href="/531-program/manifest.json" />
+    <link rel="apple-touch-icon" href="/531-program/icon-152x152.png" />
     <link
       rel="icon"
       type="image/png"
       sizes="512x512"
-      href="/icon-512x512.png"
+      href="/531-program/icon-512x512.png"
     />
-
-    <!-- Для Safari на iOS -->
-    <link rel="mask-icon" href="/icon-512x512.png" color="#f97316" />
 
     <title>5/3/1 Тренировочная программа</title>
   </head>
@@ -32,11 +33,10 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 
-    <!-- Регистрация service worker -->
     <script>
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker
-          .register("/sw.js")
+          .register("/531-program/sw.js") // ✅ Добавлен путь
           .then((registration) => {
             console.log("Service Worker зарегистрирован:", registration);
           })

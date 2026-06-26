@@ -7,7 +7,9 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: ["icon-*.png", "favicon.ico", "robots.txt"],
+      // Добавьте это для правильных путей
+      base: "/531-program/",
+      includeAssets: ["favicon.ico", "robots.txt"],
       manifest: {
         name: "5/3/1 Тренировочная программа",
         short_name: "5/3/1",
@@ -18,22 +20,16 @@ export default defineConfig({
         orientation: "portrait",
         icons: [
           {
-            src: "icon-192x192.png",
+            src: "/531-program/icon-192x192.png", // ✅ Добавлен базовый путь
             sizes: "192x192",
             type: "image/png",
             purpose: "any",
           },
           {
-            src: "icon-512x512.png",
+            src: "/531-program/icon-512x512.png", // ✅ Добавлен базовый путь
             sizes: "512x512",
             type: "image/png",
             purpose: "any",
-          },
-          {
-            src: "icon-512x512.png",
-            sizes: "512x512",
-            type: "image/png",
-            purpose: "maskable",
           },
         ],
       },
@@ -55,4 +51,6 @@ export default defineConfig({
       },
     }),
   ],
+  // ✅ Добавьте это для GitHub Pages
+  base: "/531-program/",
 });
